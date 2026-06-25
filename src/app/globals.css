@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* ---- Editorial / Serif theme tokens ---- */
+@theme {
+  --color-paper: #f5f1e8; /* warm paper background */
+  --color-card: #fbf8f1; /* slightly lighter surface */
+  --color-ink: #211c16; /* warm near-black text */
+  --color-muted: #6f6354; /* warm muted text */
+  --color-faint: #9b9082; /* captions / metadata */
+  --color-line: #ddd4c4; /* hairline rules */
+  --color-accent: #9c4a2f; /* terracotta accent */
+
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+/* Print: clean white CV, hide chrome */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
